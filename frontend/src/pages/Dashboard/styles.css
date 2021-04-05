@@ -1,0 +1,66 @@
+ul.spot-list{
+    width: 100%;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    margin-bottom: 30px;
+}
+
+ul.spot-list li{
+    display: flex;
+    flex-direction: column;
+}
+
+ul.spot-list li header{
+    width: 100%;
+    height: 120px;
+    background-size: cover;
+    border-radius: 4px;
+}
+
+ul.spot-list li strong {
+    margin-top: 10px;
+    font-size: 24px;
+    color: #444;
+}
+
+ul.spot-list li span {    
+    font-size: 15px;
+    color: #999;
+}
+
+ul.notifications {
+    list-style-type: none;
+}
+
+ul.notifications li {
+    margin-bottom: 10px;
+    border: 1px solid #F05A5B;
+    border-radius: 2px;
+    padding: 5px;
+    background-color: #F05A5B;
+    color: #FFF;
+    font-size: 14px;
+}
+
+ul.notifications li div {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 3px 0;
+}
+
+ul.notifications li div button{
+    border: none;
+    padding: 3px;
+    border-radius: 2px;
+    margin-right: 5px;
+    color: #FFF;
+}
+ul.notifications li div button.approve{
+    background-color: rgb(22, 167, 46);
+}
+ul.notifications li div button.reject{
+    background-color: rgb(228, 28, 28);
+}
