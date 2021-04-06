@@ -1,23 +1,22 @@
 import React, { useState, useEffect} from 'react';
 import {
-    SafeAreaView,
-    ScrollView,
-    Text,
-    StyleSheet,
-    Image,
     Alert
 } from 'react-native';
-import socketio from 'socket.io-client'
 import AsyncStorage from '@react-native-community/async-storage'
+import socketio from 'socket.io-client'
+
+import {
+    Container,
+    Logo,
+    SpotsContainer,
+} from './styles';
+
+import SpotList from '../../components/SpotList/index';
 
 import logo from '../../assets/logo.png';
 
-import api from '../../services/api';
-import SpotList from '../../components/SpotList.js';
-
 export default function List(){
 
-    const [spots, setSpots] = useState([]);
     const [techsArray, setTechsArray] = useState([]);
     
     useEffect(() => {
@@ -40,24 +39,14 @@ export default function List(){
     }, []);
 
     return (
-        <SafeAreaView style={styles.container}>
-            <Image source={logo} style={styles.logo}></Image>
+        <Container>
+            <Logo source={logo} />
 
-            <ScrollView>
-                {techsArray.map((t, i) => <SpotList key={i} tech={t} />)}
-            </ScrollView>
-        </SafeAreaView>
+            <SpotsContainer>
+                {techsArray.map((t, i) =>
+                    <SpotList key={i} tech={t} />
+                )}
+            </SpotsContainer>
+        </Container>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-    },
-    logo: {
-        height: 32,
-        resizeMode: 'contain',
-        alignSelf: 'center',
-        marginTop: 40
-    }
-});

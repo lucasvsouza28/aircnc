@@ -1,11 +1,9 @@
-const CompanyRouter = require('./routers/company-router');
-const UserRouter = require('./routers/user-router');
-const SpotRouter = require('./routers/spot-router');
-const DashboardRouter = require('./routers/dashboard-router');
-const BookingRouter = require('./routers/booking-router');
+const UserRouter = require('./user-router');
+const SpotRouter = require('./spot-router');
+const DashboardRouter = require('./dashboard-router');
+const BookingRouter = require('./booking-router');
 
 module.exports = {
-    CompanyRouter,
     UserRouter,
     SpotRouter,
     DashboardRouter,

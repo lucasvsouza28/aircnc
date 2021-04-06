@@ -15,13 +15,12 @@ const options = {
 const io = socketio(server, options);
 
 const { UserModel } = require('./models');
-const {
-    CompanyRouter
-    ,UserRouter
-    ,SpotRouter
-    ,DashboardRouter
-    ,BookingRouter
-} = require('./routers');
+const {    
+    UserRouter,
+    SpotRouter,
+    DashboardRouter,
+    BookingRouter,
+} = require('./routers/index.js');
 
 const port = process.env.PORT || 3000;
 const connectedUsers = {};
@@ -49,7 +48,6 @@ app.use(async (req, res, next) => {
     next();
 });
 
-app.use('/company', CompanyRouter);
 app.use('/dashboard', DashboardRouter);
 app.use('/user', UserRouter);
 app.use('/spot', SpotRouter);
